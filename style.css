@@ -2,7 +2,11 @@
   --navy:#0b1f33;
   --navy2:#102a44;
   --orange:#d96b1a;
-  --bg:#f6f8fb;
+
+  /* Warm background tones */
+  --warm-bg:#efe9e2;
+  --warm-accent:#e4d8c8;
+
   --text:#0b1f33;
   --muted:#546579;
 }
@@ -13,7 +17,12 @@ body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color:var(--text);
-  background:#f6f8fb;
+
+  /* Warm site background */
+  background:
+    radial-gradient(900px 500px at 20% 0%, rgba(217,107,26,0.12), transparent 60%),
+    radial-gradient(700px 500px at 90% 100%, rgba(11,31,51,0.10), transparent 60%),
+    linear-gradient(180deg, var(--warm-bg), var(--warm-accent));
 
   position: relative;
   overflow-x: hidden;
@@ -25,32 +34,35 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:24px;
+  padding:32px;
 }
 
+/* Main card */
 .card{
   width:min(1100px, 100%);
   border-radius:24px;
-  padding:40px 28px;
+  padding:44px 32px;
   text-align:center;
   position: relative;
   z-index: 1;
 
+  /* Warm animated card background */
   background:
     linear-gradient(
       120deg,
       #ffffff,
       #ffffff,
-      rgba(217,107,26,0.06),
+      rgba(217,107,26,0.18),
       #ffffff
     );
   background-size: 300% 300%;
-  animation: cardGlow 14s ease-in-out infinite;
+  animation: cardGlow 16s ease-in-out infinite;
 
-  border:1px solid rgba(16,42,68,0.10);
-  box-shadow: 0 18px 50px rgba(16,42,68,0.10);
+  border:1px solid rgba(16,42,68,0.12);
+  box-shadow:
+    0 30px 80px rgba(16,42,68,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.6);
 }
-
 
 /* Header */
 .logo{
@@ -61,62 +73,59 @@ body{
 
 .pill{
   display:inline-block;
-  padding:10px 18px;
+  padding:10px 20px;
   border-radius:999px;
-  background: rgba(217,107,26,0.10);
+  background: rgba(217,107,26,0.16);
   color: var(--orange);
   font-weight:800;
   font-size:20px;
   letter-spacing:0.6px;
-  margin-top: 4px;
-}
-
-h1{
-  font-size: clamp(28px, 3.2vw, 44px);
-  color: var(--navy);
-  margin: 12px 0;
+  margin-top: 6px;
 }
 
 .sub{
   color: var(--muted);
-  max-width: 720px;
-  margin: 0 auto 24px;
-  line-height:1.55;
+  max-width: 760px;
+  margin: 18px auto 28px;
+  line-height:1.6;
+  font-size: 17px;
 }
 
 /* Buttons */
 .ctaRow{
   display:flex;
-  gap:12px;
+  gap:14px;
   justify-content:center;
-  margin-bottom:28px;
+  margin-bottom:34px;
   flex-wrap:wrap;
 }
 
 .btn{
-  padding:12px 18px;
-  border-radius:14px;
+  padding:14px 22px;
+  border-radius:16px;
   font-weight:800;
   background: linear-gradient(90deg, var(--orange), #f08a2b);
   color:#fff;
   text-decoration:none;
+  box-shadow: 0 10px 24px rgba(217,107,26,0.35);
 }
 
 /* Projects */
 .projects{
-  margin-top:40px;
+  margin-top:42px;
 }
 
 .projectGrid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap:18px;
+  gap:20px;
 }
 
 .project{
   border-radius:18px;
   overflow:hidden;
-  border:1px solid rgba(16,42,68,0.10);
+  border:1px solid rgba(16,42,68,0.12);
+  background:#fff;
 }
 
 .project img{
@@ -126,23 +135,23 @@ h1{
   display:block;
 }
 
+/* Mobile */
 @media (max-width:760px){
   .projectGrid{
     grid-template-columns:1fr;
   }
 }
 
+/* Footer */
 .fine{
-  margin-top:24px;
+  margin-top:28px;
   font-size:13px;
   color: rgba(16,42,68,0.55);
 }
 
+/* Card animation */
 @keyframes cardGlow{
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
-
-
