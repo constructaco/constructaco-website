@@ -135,8 +135,8 @@ body::after{
   z-index: -1;
   pointer-events: none;
   background-repeat: no-repeat;
-  opacity: 0.75;
-  filter: blur(18px);
+  opacity: 1;
+  filter: blur(30px);
   transform: translate3d(0,0,0);
 }
 
