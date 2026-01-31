@@ -130,10 +130,13 @@ h1{
   font-size:13px;
   color: rgba(16,42,68,0.55);
 }
-/* --- Subtle animated background glows --- */
+
+
+/* --- Subtle animated background glows (REQUIRED base rules) --- */
 body{
   position: relative;
   overflow-x: hidden;
+  background: #f6f8fb; /* keep background simple */
 }
 
 body::before,
