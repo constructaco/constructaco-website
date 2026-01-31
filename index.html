@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Constructaco — Coming Soon</title>
+  <meta name="description" content="Constructaco — Construction, planning & consultancy for developers. Coming soon." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="card">
+      <img class="logo" src="logo.png" alt="Constructaco logo" />
+
+      <p class="pill">Coming Soon</p>
+
+      <h1>Building Your Vision</h1>
+
+      <p class="sub">
+        <strong>Constructaco</strong> delivers construction, planning, and consultancy
+        services for developers — from concept to completion.
+      </p>
+
+      <div class="ctaRow">
+        <a class="btn" href="mailto:hello@constructaco.com">Email Us</a>
+        <a class="btn ghost" href="#">Contact</a>
+      </div>
+
+      <!-- PROJECTS -->
+      <section class="projects">
+        <h2>Selected Projects</h2>
+
+        <div class="projectGrid">
+          <figure class="project">
+            <img src="project1.jpg" alt="Residential development project" />
+            <figcaption>High-end residential development completed in 2023</figcaption>
+          </figure>
+
+          <figure class="project">
+            <img src="project2.jpg" alt="Commercial building project" />
+            <figcaption>Commercial office construction for private developer</figcaption>
+          </figure>
+
+          <figure class="project">
+            <img src="project3.jpg" alt="Mixed-use development project" />
+            <figcaption>Mixed-use planning and construction delivery</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <p class="fine">
+        © <span id="year"></span> Constructaco. All rights reserved.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
