@@ -3,14 +3,11 @@
   --navy2:#102a44;
   --orange:#d96b1a;
 
-  /* Warm outer background */
-  --warm-bg:#e6dfd6;
+  /* Shared background colour */
+  --base-bg:#e6dfd6;
 
-  /* Dark card background */
-  --card-bg:#121e2b;
-
-  --text-light:#ffffff;
-  --text-muted:#c8d1dc;
+  --text:#0b1f33;
+  --muted:#4f5f6f;
 }
 
 *{ box-sizing:border-box; }
@@ -18,14 +15,8 @@
 body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color:var(--navy);
-
-  /* Warm site background */
-  background:
-    radial-gradient(900px 500px at 20% 0%, rgba(217,107,26,0.14), transparent 60%),
-    radial-gradient(700px 500px at 90% 100%, rgba(11,31,51,0.14), transparent 60%),
-    var(--warm-bg);
-
+  color:var(--text);
+  background: var(--base-bg);
   min-height:100vh;
 }
 
@@ -35,34 +26,29 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:36px;
+  padding:40px 28px;
 }
 
-/* Main card */
+/* Main card — same colour as background */
 .card{
   width:min(1100px, 100%);
+  padding:44px 32px;
   border-radius:26px;
-  padding:46px 34px;
   text-align:center;
 
-  background:
-    linear-gradient(
-      160deg,
-      #162536,
-      var(--card-bg),
-      #0f1a26
-    );
+  background: var(--base-bg);
 
-  border:1px solid rgba(255,255,255,0.06);
+  /* Separation without colour contrast */
+  border:1px solid rgba(11,31,51,0.12);
   box-shadow:
-    0 40px 90px rgba(0,0,0,0.35),
-    inset 0 1px 0 rgba(255,255,255,0.05);
+    0 30px 80px rgba(11,31,51,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.4);
 }
 
 /* Header */
 .logo{
   width:min(360px, 80%);
-  margin:0 auto 10px;
+  margin:0 auto 6px;
   display:block;
 }
 
@@ -75,14 +61,14 @@ body{
   font-weight:800;
   font-size:18px;
   letter-spacing:0.6px;
+  margin-top: 6px;
 }
 
-/* Main text */
 .sub{
-  color: var(--text-muted);
+  color: var(--muted);
   max-width: 760px;
   margin: 18px auto 30px;
-  line-height:1.65;
+  line-height:1.6;
   font-size:17px;
 }
 
@@ -102,7 +88,7 @@ body{
   background: linear-gradient(90deg, var(--orange), #f08a2b);
   color:#fff;
   text-decoration:none;
-  box-shadow: 0 12px 28px rgba(217,107,26,0.45);
+  box-shadow: 0 10px 22px rgba(217,107,26,0.35);
 }
 
 /* Projects */
@@ -119,8 +105,8 @@ body{
 .project{
   border-radius:18px;
   overflow:hidden;
-  border:1px solid rgba(255,255,255,0.08);
-  background:#0f1a26;
+  border:1px solid rgba(11,31,51,0.14);
+  background: var(--base-bg);
 }
 
 .project img{
@@ -141,5 +127,5 @@ body{
 .fine{
   margin-top:30px;
   font-size:13px;
-  color: rgba(255,255,255,0.55);
+  color: rgba(11,31,51,0.55);
 }
