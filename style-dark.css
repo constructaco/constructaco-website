@@ -61,15 +61,16 @@ body{
 
 .pill{
   display:inline-block;
-  padding:10px 22px;
+  padding:18px 34px;
   border-radius:999px;
-  background: rgba(217,107,26,0.16);
+  background: rgba(217,107,26,0.18);
   color: var(--orange);
-  font-weight:800;
-  font-size:18px;
-  letter-spacing:0.6px;
-  margin-top: 6px;
+  font-weight:900;
+  font-size:36px;   /* doubled size */
+  letter-spacing:1px;
+  margin-top: 10px;
 }
+
 
 .sub{
   color: var(--muted);
