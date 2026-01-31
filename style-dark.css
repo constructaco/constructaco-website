@@ -90,7 +90,7 @@ body{
 }
 
 .btn{
-  padding:14px 24px;
+  padding: 40px 22px;
   border-radius:16px;
   font-weight:800;
   background: linear-gradient(90deg, var(--orange), #f08a2b);
@@ -100,35 +100,54 @@ body{
 }
 
 .projects{
-  margin-top:48px;
+  margin-top:44px;
 }
 
+/* Push the grid outward to use almost the full card width */
 .projectGrid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap:16px; /* tighter gap = wider images */
+  gap:8px;                 /* nearly touching */
+  margin: 0 -14px;         /* steals back some of the card padding */
+  padding: 0 14px;         /* keeps it aligned neatly */
 }
 
 .project{
-  border-radius:20px;
+  border-radius:14px;
   overflow:hidden;
-  border:1px solid rgba(11,31,51,0.12);
   background:#fff;
+  border: none;            /* remove borders that visually add spacing */
 }
 
-/* Image fills card fully */
+/* Show MORE of the wide photo (less vertical crop) */
 .project img{
   width:100%;
-  height:340px; /* taller = visually wider */
+  height:220px;            /* shorter = less cropping = more “wide” visible */
   object-fit:cover;
+  object-position:center;  /* you can change to center top if needed */
   display:block;
 }
+
+/* Caption area with breathing room */
 .project figcaption{
-  padding:18px 20px 22px; /* more space all around */
+  padding:18px 20px 22px;
   font-size:15px;
   color: var(--muted);
   line-height:1.5;
-  text-align:left; /* optional – feels more professional */
+  text-align:left;
+}
+
+/* Mobile stays clean */
+@media (max-width:760px){
+  .projectGrid{
+    grid-template-columns: 1fr;
+    gap:12px;
+    margin: 0;
+    padding: 0;
+  }
+  .project img{
+    height:260px;
+  }
 }
 
 
