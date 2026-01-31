@@ -30,15 +30,27 @@ body{
 
 .card{
   width:min(1100px, 100%);
-  background:#fff;
-  border:1px solid rgba(16,42,68,0.10);
   border-radius:24px;
   padding:40px 28px;
-  box-shadow: 0 18px 50px rgba(16,42,68,0.10);
   text-align:center;
   position: relative;
   z-index: 1;
+
+  background:
+    linear-gradient(
+      120deg,
+      #ffffff,
+      #ffffff,
+      rgba(217,107,26,0.06),
+      #ffffff
+    );
+  background-size: 300% 300%;
+  animation: cardGlow 14s ease-in-out infinite;
+
+  border:1px solid rgba(16,42,68,0.10);
+  box-shadow: 0 18px 50px rgba(16,42,68,0.10);
 }
+
 
 /* Header */
 .logo{
@@ -126,48 +138,11 @@ h1{
   color: rgba(16,42,68,0.55);
 }
 
-/* --- Subtle animated background glows --- */
-body::before,
-body::after{
-  content:"";
-  position: fixed;
-  inset: -200px;
-  z-index: -1;
-  pointer-events: none;
-  background-repeat: no-repeat;
-  opacity: 1;
-  filter: blur(30px);
-  transform: translate3d(0,0,0);
+@keyframes cardGlow{
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-body::before{
-  background-image:
-    radial-gradient(520px 420px at 20% 20%, rgba(217,107,26,0.22), transparent 70%),
-    radial-gradient(620px 480px at 85% 10%, rgba(11,31,51,0.12), transparent 70%);
-  animation: floatGlowA 16s ease-in-out infinite;
-}
 
-body::after{
-  background-image:
-    radial-gradient(560px 460px at 70% 80%, rgba(217,107,26,0.16), transparent 70%),
-    radial-gradient(720px 520px at 10% 90%, rgba(11,31,51,0.08), transparent 72%);
-  animation: floatGlowB 22s ease-in-out infinite;
-  opacity: 0.55;
-}
 
-@keyframes floatGlowA{
-  0%   { transform: translate(-1.5%, -1%) scale(1); }
-  50%  { transform: translate(1.5%, 1%) scale(1.05); }
-  100% { transform: translate(-1.5%, -1%) scale(1); }
-}
-
-@keyframes floatGlowB{
-  0%   { transform: translate(1%, 1.5%) scale(1); }
-  50%  { transform: translate(-1%, -1.5%) scale(1.06); }
-  100% { transform: translate(1%, 1.5%) scale(1); }
-}
-
-/* Respect accessibility preference */
-@media (prefers-reduced-motion: reduce){
-  body::before, body::after{ animation: none !important; }
-}
