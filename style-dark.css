@@ -168,3 +168,21 @@ body{
   font-size:13px;
   color: rgba(11,31,51,0.55);
 }
+/* Mobile-only adjustments */
+@media (max-width: 760px){
+
+  /* Make "Website Coming Soon" 50% smaller */
+  .pill{
+    font-size: 18px;      /* desktop ~36px → mobile ~18px */
+    padding: 10px 18px;
+    letter-spacing: 0.6px;
+  }
+
+  /* Make logo 25% bigger on mobile */
+  .logo{
+    width: min(450px, 90%);  /* was ~360px */
+    margin-bottom: 10px;
+  }
+
+}
+
