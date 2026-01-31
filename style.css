@@ -29,7 +29,6 @@ body{
 }
 
 .card{
-  background: hotpink !important;
   width:min(1100px, 100%);
   border-radius:24px;
   padding:40px 28px;
